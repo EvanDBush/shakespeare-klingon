@@ -24,7 +24,7 @@ const translationInput = document.getElementById('translation-input')
 function translateToKlingon (quoteData) {
     fetch('https://api.funtranslations.com/translate/klingon.json', {
         method: 'post',
-        body:`${quoteData}`
+        body: JSON.parse(quoteData)
     })
         .then(response => response.json())
         .then(translation =>console.log(translation))
